@@ -3,7 +3,26 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let images = [];
 
+
+(function getImages() {
+    fetch('../image.json')
+        .then(response => response.json())
+        .then(data => {
+            images = data;
+            shuffleImages();
+        });
+})();
+
+function shuffleImages() {
+    for (let i = images.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = images[i];
+        images[i] = images[j];
+        images[j] = temp;
+    }
+}
 
 function flipCard() {
 
@@ -52,11 +71,13 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
-(function shuffleCard() {
+function shuffleCard() {
     cards.forEach(card => {
         let randomNum = Math.floor(Math.random() * 12);
         card.style.order = randomNum;
     })
-})();
+};
+
+
 
 cards.forEach(card => card.addEventListener('click', flipCard))
