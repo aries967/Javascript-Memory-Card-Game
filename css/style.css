@@ -5,9 +5,29 @@
 }
 
 body {
-    height: 100vh;
-    display: flex;
+    font-family: 'Verdana', sans-serif;
+    min-height: 100vh;
     background: #ccc;
+}
+
+header {
+    margin: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 8px;
+    width: 640px;
+    max-width: 100%;
+}
+
+.stat p {
+    width: 50%;
 }
 
 .memory-game {
@@ -59,4 +79,68 @@ body {
 
 .flip {
     transform: rotateY(180deg);
+}
+
+.alert-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 1;
+    display: none;
+    transition: all 1s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert {
+    background: #fff;
+    padding: 35px 55px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.alert-text {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.play-again {
+    border: none;
+    outline: none;
+    padding: 8px 19px;
+    background: #888;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.play-again:active {
+    transform: scale(0.95);
+}
+
+.close-alert {
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+}
+
+.text-win {
+    color: green;
+}
+
+.text-lose {
+    color: red;
+}
+
+.fade-in {
+    display: flex;
+    opacity: 1;
 }

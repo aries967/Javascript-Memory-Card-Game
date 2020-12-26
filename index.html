@@ -9,6 +9,13 @@
 </head>
 
 <body>
+    <header>
+        <h1>Memory Card Game</h1>
+        <div class="stat">
+            <p>Time: <span id="time">60</span></p>
+            <p>Flip: <span id="flip-count">0</span></p>
+        </div>
+    </header>
     <section class="memory-game">
         <div class="memory-card" data-image="Sea Anemone">
             <img class="card-front" src="./img/001-sea anemone.svg" alt="Sea Anemone">
@@ -59,6 +66,13 @@
             <div class="card-back"></div>
         </div>
     </section>
+    <div class="alert-container">
+        <div class="alert">
+            <p class="alert-text">You Win!</p>
+            <button class="play-again">Play again</button>
+            <button class="close-alert">X</button>
+        </div>
+    </div>
     <script src="./js/game.js"></script>
 </body>
 
